@@ -1,9 +1,11 @@
 import React from "react"
 
 export default function Header(){
-    <div className="header-wrapper" key={this.className}>
-        <p className="header-text" key={this.className}>
+    return(
+    <div className="header-wrapper">
+        <p className="header-text">
             List of passengers
         </p>
     </div>
+    );
 }

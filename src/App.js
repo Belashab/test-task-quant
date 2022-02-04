@@ -5,7 +5,7 @@ import PassengerDisplayList from './components/passenger-display-list/PassengerD
 
 function App() {
   return (
-    <div className="App" key={this.className}>
+    <div className="App">
       <Header />
       <PassengerDisplayList />
       <Footer />

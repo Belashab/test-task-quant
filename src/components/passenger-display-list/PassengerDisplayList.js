@@ -1,5 +1,7 @@
 export default function PassengerDisplayList() {
-    <div className="passenger-display-list" key={this.PassengerDisplayList}>
+    return(
+    <div className="passenger-display-list">
         Здесь могла быть Ваша реклама
     </div>
+    )
 }
