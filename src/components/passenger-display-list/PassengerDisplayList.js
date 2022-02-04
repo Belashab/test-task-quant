@@ -1,8 +1,8 @@
 import axios from 'axios';
-import InfiniteScroll from 'react-infinite-scroll-component';
 import { useState } from 'react';
+import InfiniteScroll from 'react-infinite-scroll-component';
 import PassengerDisplayCard from '../passenger-display-card/PassengerDisplayCard';
-import './passengerDisplayList.css'
+import './passengerDisplayList.css';
 
 export default function PassengerDisplayList() {
     // Создаем запрос в API
@@ -22,10 +22,9 @@ export default function PassengerDisplayList() {
             );
         };
     return(
-    <div className='passenger-display-list'>
     <InfiniteScroll
-        dataLength={renderedPassengers.length} //This is important field to render the next data
-        next={accessPassengers}
+        dataLength={renderedPassengers.length + 1} //This is important field to render the next data
+        next={() => accessPassengers}
         hasMore={true}
         loader={<h4>Loading...</h4>}
         endMessage={
@@ -38,6 +37,5 @@ export default function PassengerDisplayList() {
            <PassengerDisplayCard aircompanyLogo = {renderedPassenger.airline[0].logo} passengerName = {renderedPassenger.name}/>
        )}
       </InfiniteScroll>
-      </div>
     )
 }
