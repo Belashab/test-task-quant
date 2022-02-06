@@ -8,10 +8,10 @@ export default function PassengerDisplayList() {
     // Создаем запрос в API
     const [renderedPassengers, setPassengers] = useState([]);
     // const renderedPassengers = [];
-    const accessPassengers = async () => {
+    const accessPassengers = () => {
         console.log('request dispatched')
         let pageToLoad = 0;
-        await axios.get(`https://api.instantwebtools.net/v1/passenger?page=${pageToLoad}&size=50`)
+        axios.get(`https://api.instantwebtools.net/v1/passenger?page=${pageToLoad}&size=50`)
             .then(
                 res => {
                     setPassengers(renderedPassengers.concat(res.data.data))
@@ -23,8 +23,8 @@ export default function PassengerDisplayList() {
         };
     return(
     <InfiniteScroll
-        dataLength={renderedPassengers.length + 1} //This is important field to render the next data
-        next={() => accessPassengers}
+        dataLength={renderedPassengers.length} //This is important field to render the next data
+        next={accessPassengers()}
         hasMore={true}
         loader={<h4>Loading...</h4>}
         endMessage={
