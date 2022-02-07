@@ -1,6 +1,6 @@
-/* .passenger-display-list {
+#scrollableDiv {
+    max-width: 600px;
     display: flex;
-    flex: 50%;
-    height: 300;
-    overflow: "auto";
-} */
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
